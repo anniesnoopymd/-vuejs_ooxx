@@ -1,0 +1,52 @@
+$color_blue: #46f
+$color_red: #f35
+$color_bg: #222
+
+@mixin size($w,$h:$w)
+   width: $w
+   height: $h
+   
+html,body
+   background-color: $color_bg
+   +size(100%)
+   margin: 0
+   color: white
+   
+.block
+   +size(150px)
+   border: solid 1px
+   position: relative
+   &:after, &:before
+      content: ""
+      display: block
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      transition: 0.5s
+   &.circle
+      &:after, &:before
+         content: ""
+         display: block
+         position: absolute
+         border-radius: 50%
+      &:before
+         +size(90%)
+         background-color: $color_red
+      &:after
+         +size(60%)
+         background-color: $color_bg
+   &.cross
+      &:before, &:after
+         +size(90%,15%)
+         background-color: $color_blue
+         border-radius: 0px
+         position: absolute
+
+      &:before
+         transform: translate(-50%,-50%) rotate(45deg)
+      &:after
+         transform: translate(-50%,-50%) rotate(-45deg)
+      
+         
+         
+         
