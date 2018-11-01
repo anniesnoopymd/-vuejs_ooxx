@@ -6,11 +6,19 @@ html, body {
   color: white;
 }
 
+.block_area {
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .block {
   width: 150px;
   height: 150px;
-  border: solid 1px;
+  border: solid 1px rgba(255, 255, 255, 0.2);
   position: relative;
+  box-sizing: border-box;
 }
 .block:after, .block:before {
   content: "";

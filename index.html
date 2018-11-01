@@ -16,7 +16,11 @@
 
   
 <div id="app">
-  <div class="block" v-bind:class="{circle: blocks.type==1, cross: blocks.type==-1}"></div>
+  <div class="block_area">
+    <div class="block" v-for="(block, bid) in blocks" v-bind:class="{circle: block.type==1, cross: block.type==-1}" v-on:click="player_go(block)"> 
+      <div class="small_number">{{ bid+1 }}</div>
+    </div>
+  </div>
 </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
 
