@@ -1,6 +1,13 @@
 #app
+   h1 {{win_test}}
    .block_area
       .block(v-for="(block, bid) in blocks",
              v-bind:class="{circle: block.type==1, cross: block.type==-1}",
              v-on:click="player_go(block)") 
          .small_number {{ bid+1 }}
+         
+   h2 Player
+   .block.small(v-bind:class="{circle: turn==1, cross: turn==-1}") 
+   
+   
+   h2(@click="restart()") Restart
